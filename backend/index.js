@@ -21,9 +21,9 @@ export const original = "http://localhost:3000";
 app.use(express.urlencoded({extended:true}));
 //cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 const corsOption = {
-    origin:"http://localhost:3000",
+    origin:"*",
     credentials:true,
-
+    method:["GET","POST","PUT","DELETE"]
 }
 app.use(cors(corsOption));
 app.use(express.json());
