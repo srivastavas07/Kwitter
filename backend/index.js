@@ -7,7 +7,6 @@ import userRoutes from './routes/userRoutes.js';
 import tweetRoutes from './routes/tweetRoutes.js';
 import cors from "cors";
 import serverless from "serverless-http";
-import favicon from 'serve-favicon';
 dotenv.config({
     path:'.env'
 })
@@ -21,7 +20,7 @@ export const original = "http://localhost:3000";
 app.use(express.urlencoded({extended:true}));
 //cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 const corsOption = {
-    origin:"*",
+    origin:"https://kwitter-backend.vercel.app",
     credentials:true,
     methods:["GET","POST","PUT","DELETE"]
 }
