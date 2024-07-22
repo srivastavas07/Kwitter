@@ -39,7 +39,7 @@ app.get('/favicon.ico', (req, res) => (
 ));
 
 const Port = process.env.PORT;
-app.listen(Port,()=>{
+app.listen("https://kwitter-backend.vercel.app/",()=>{
     console.log('Server Running at '+Port);
 })
 
