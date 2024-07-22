@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/tweet",tweetRoutes);
-app.use("/",(res,req)=>{
+app.get("/",(res,req)=>{
     req.send("Server is running");
 });
 
