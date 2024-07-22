@@ -40,3 +40,4 @@ app.listen(Port,()=>{
 })
 
 export default app;
+//ye tha issue export default iske wajah se nahi chal rha tha
