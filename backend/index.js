@@ -23,8 +23,9 @@ app.use(express.urlencoded({extended:true}));
 const corsOption = {
     origin:"*",
     credentials:true,
-    method:["GET","POST","PUT","DELETE"]
+    methods:["GET","POST","PUT","DELETE"]
 }
+app.options("*",cors(corsOption));
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
