@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import tweetRoutes from './routes/tweetRoutes.js';
 import cors from "cors";
-
+import serverless from "serverless-http";
 dotenv.config({
     path:'.env'
 })
@@ -36,3 +36,5 @@ const Port = process.env.PORT;
 app.listen(Port,()=>{
     console.log('Server Running at '+Port);
 })
+
+export const handler = serverless(app);
