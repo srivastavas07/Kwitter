@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.logoFont {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.poppins {
+    font-family: 'poppins', sans-serif;
+}
+
+:root {
+    --border-color: #fff4;
+}
+
+.active {
+    position: absolute;
+    bottom: 0px;
+    height: 10%;
+    width: 100%;
+    left: 0px;
+    background: rgb(0, 187, 255);
+    border-radius: 10px;
+}
+
+.bg-blue {
+    background: rgb(0, 149, 255);
+}
+
+.tweetIcon {
+    font-size: 20px;
+}
+
+.border-right {
+    border-right:none;
+}
+
+.border-top {
+    border-top: 1px solid var(--border-color);
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.border-left {
+    border-left: 1px solid var(--border-color);
+}
+
+.loader {
+    width: 35px;
+    height: 35px;
+    border: 5px solid #38acff4a;
+    border-bottom-color: #1d9bf0;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 0.7s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.little-loader {
+    width: 30px;
+    aspect-ratio: 4.8;
+    margin-right:40px;
+    --_g: no-repeat radial-gradient(circle closest-side,#939393 90%,#0000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+  }
+  @keyframes l7 {
+      33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
+      50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
+      66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+  }
+
+  .scroll::-webkit-scrollbar {
+    background-color: transparent; 
+    width: 3px; 
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    background: #f0f0f037; 
+}
+
+.scroll:hover::-webkit-scrollbar-thumb {
+    background: rgb(0, 238, 255);
+}
+
+.markdown-container {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+    .border-right {
+        border-right: 1px solid var(--border-color);
+    }
+}

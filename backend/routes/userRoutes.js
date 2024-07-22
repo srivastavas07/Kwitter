@@ -1,0 +1,21 @@
+import express from 'express';
+import {Register,Login,LogOut, bookmark, getProfile,otherUsers,followUnfollow, editProfile, showFollowers,showFollowing, searchUser, LoginUsingGoogle, getNotification} from '../controllers/userController.js';
+import isAuthenticated from "../config/auth.js";
+import { bookmarkedTweets } from '../controllers/tweetController.js';
+const router = express.Router();
+router.route("/register").post(Register);
+router.route("/login").post(Login);
+router.route("/logOut").get(LogOut);
+router.route("/bookmark/:id").put(isAuthenticated,bookmark);
+router.route("/profile/:id").get(isAuthenticated,getProfile);
+router.route("/otherUsers/:id").get(isAuthenticated,otherUsers);
+router.route("/follow/:id").put(isAuthenticated,followUnfollow);
+router.route("/bookmarkedTweets/:id").get(isAuthenticated,bookmarkedTweets);
+router.route("/edit/:id").put(isAuthenticated, editProfile);
+router.route("/followers/:id").get(isAuthenticated,showFollowers);
+router.route("/following/:id").get(isAuthenticated,showFollowing);
+router.route("/searchUser").post(isAuthenticated, searchUser);
+router.route("/googleLogin").post(LoginUsingGoogle);
+router.route("/notifications/:id").get(isAuthenticated,getNotification);
+
+export default router;
