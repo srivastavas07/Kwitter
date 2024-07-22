@@ -30,6 +30,6 @@ app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/tweet",tweetRoutes);
 
 const Port = process.env.PORT;
-app.listen(Port,()=>{
-    console.log('Server Running at '+Port);
+app.get( '/',(req,res)=>{
+     res.send("Hello World");
 })
