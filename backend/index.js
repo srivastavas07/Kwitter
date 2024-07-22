@@ -20,7 +20,7 @@ export const original = "https://kwitter07.vercel.app"
 
 //cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 const corsOption = {
-    origin:"https://kwitter07.vercel.app",
+    origin:"https://kwitter07.vercel.app/",
     credentials:true,
 }
 app.options("*",cors(corsOption));
