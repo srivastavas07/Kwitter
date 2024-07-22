@@ -6,7 +6,6 @@ import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import tweetRoutes from './routes/tweetRoutes.js';
 import cors from "cors";
-import serverless from "serverless-http";
 dotenv.config({
     path:'.env'
 })
@@ -15,12 +14,13 @@ dotenv.config({
 databaseConnection();
 const app = express();
 
-export const original = "http://localhost:3000";
 //adding middleware to the app
 app.use(express.urlencoded({extended:true}));
+export const original = "https://localhost:3000"
+
 //cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 const corsOption = {
-    origin:"https://kwitter-backend.vercel.app",
+    origin:"https://localhost:3000",
     credentials:true,
     methods:["GET","POST","PUT","DELETE"]
 }
@@ -34,13 +34,9 @@ app.get("/",(res,req)=>{
     req.send("Server is running");
 });
 
-app.get('/favicon.ico', (req, res) => (
-    res.status(200).sendFile('favicon.ico', {root: __dirname + '/static/'})
-));
-
 const Port = process.env.PORT;
-app.listen("https://kwitter-backend.vercel.app/",()=>{
+app.listen(Port,()=>{
     console.log('Server Running at '+Port);
 })
 
-export const handler = serverless(app);
+export default app;
