@@ -7,6 +7,7 @@ import userRoutes from './routes/userRoutes.js';
 import tweetRoutes from './routes/tweetRoutes.js';
 import cors from "cors";
 import serverless from "serverless-http";
+import favicon from 'serve-favicon';
 dotenv.config({
     path:'.env'
 })
@@ -14,6 +15,7 @@ dotenv.config({
 
 databaseConnection();
 const app = express();
+
 export const original = "http://localhost:3000";
 //adding middleware to the app
 app.use(express.urlencoded({extended:true}));
@@ -28,9 +30,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/tweet",tweetRoutes);
-app.get("/",(res,req)=>{
-    req.send("Server is running");
-});
+// app.get("/",(res,req)=>{
+//     req.send("Server is running");
+// });
+
+app.get('/favicon.ico', (req, res) => (
+    res.status(200).sendFile('favicon.ico', {root: __dirname + '/static/'})
+));
 
 const Port = process.env.PORT;
 app.listen(Port,()=>{
