@@ -22,7 +22,6 @@ export const original = "https://localhost:3000"
 const corsOption = {
     origin:"https://localhost:3000",
     credentials:true,
-    methods:["GET","POST","PUT","DELETE"]
 }
 app.options("*",cors(corsOption));
 app.use(cors(corsOption));
