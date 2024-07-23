@@ -90,6 +90,10 @@ export const Login = async (req, res) => {
             user
         })
     } catch (error) {
+        return res.status(401).json({
+            message:"Something went Wrong..!!",
+            success:false,
+        })
         console.log(error);
     }
 }
