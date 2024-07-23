@@ -27,7 +27,6 @@ const corsOption = {
     origin:"http://localhost:3000",  // Allow all paths and subdomains
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
 
 }
 app.use(cors(corsOption));
