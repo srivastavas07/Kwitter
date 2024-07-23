@@ -17,7 +17,6 @@ function BookmarkSection() {
             const response = await axios.get(`${USER_END_POINT}/bookmarkedTweets/${user?._id}`, {
                 withCredentials: true,
             });
-            console.log(response.data);
             dispatch(getBookmarkedTweets(response?.data?.tweets));
         } catch (error) {
             console.log(error);

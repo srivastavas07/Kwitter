@@ -84,7 +84,6 @@ const Tweet = ({ tweet }) => {
                 },
                 withCredentials: true,
             });
-            console.log(response.data.text);
             setSentiment(response.data.text);
         } catch (error) {
             // Handle the error here, potentially with a user message or retry logic

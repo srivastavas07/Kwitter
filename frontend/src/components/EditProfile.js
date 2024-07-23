@@ -42,7 +42,6 @@ const EditProfile = () => {
                 },
                 withCredentials:true,
             });
-            console.log(response.data.message);
             dispatch(getRefresh());
             dispatch(updateName(name))
             dispatch(updateUsername(username));

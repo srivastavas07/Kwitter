@@ -12,7 +12,6 @@ export const SideBarContent = () => {
     const id = SideContent();
     const {notifications} = useSelector(store=>store.user);
     const hasNotifications = notifications && notifications?.length > 0;
-    console.log("notifications are" + notifications );
     return [
         { label: 'Home', icon: <IoHomeSharp />, path: '/' },
         { label: 'Chat Bot', icon: <TbMessageChatbot size={30} />, path: '/chatBot'},

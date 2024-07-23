@@ -13,7 +13,6 @@ const useGetNotifications = () => {
             const response = await axios.get(`${USER_END_POINT}/notifications/${user?._id}`, {
                 withCredentials: true,
             })
-            console.log(response.data.notifications);
             dispatch(getNotifications(response.data.notifications))
         } catch (error) {
             console.log(error);

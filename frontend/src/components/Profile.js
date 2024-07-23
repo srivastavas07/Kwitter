@@ -55,7 +55,6 @@ const Profile = () => {
             dispatch(getUserRefresh());
             dispatch(getUser(userData?.data?.user));
             toast.success(response.data.message);
-            // console.log(response.data);
 
         } catch (error) {
             console.log(error);

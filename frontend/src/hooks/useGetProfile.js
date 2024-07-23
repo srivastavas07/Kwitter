@@ -9,11 +9,10 @@ const useGetProfile = (id) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                // console.log("ye hai requested id" + id);
+                
                 const response = await axios.get(`${USER_END_POINT}/profile/${id}`, {
                     withCredentials: true,
                 })
-                console.log(response?.data?.user);
                 dispatch(getProfile(response?.data?.user));
             } catch (error) {
                 console.log(error)

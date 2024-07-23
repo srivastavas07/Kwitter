@@ -6,7 +6,6 @@ import { useEffect } from "react";
 
 const useGetUserTweets = async(id) => {
     const {refresh} = useSelector(state => state.tweets);
-    console.log(id + "frontend dikkat");
     const dispatch = useDispatch();
     useEffect(() => {
     const fetchUserTweets = async() =>{

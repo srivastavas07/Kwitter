@@ -30,7 +30,6 @@ const CommentsSection = () => {
             }, {
                 withCredentials: true,
             });
-            console.log(response.data.message)
             toast.success(response.data.message);
             setDescription("");
             dispatch(getRefresh())
