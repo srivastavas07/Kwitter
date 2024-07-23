@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended:true}));
 
 const corsOption = {
 
-    origin: ["https://kwitter07.vercel.app/"],  // Allow all paths and subdomains
+    origin: ["https://kwitter07.vercel.app/"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 
