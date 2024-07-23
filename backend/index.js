@@ -22,12 +22,10 @@ app.use(express.urlencoded({extended:true}));
 // cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 
 const corsOption = {
-
     origin: ["https://kwitter07.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
-
 }
 app.use(cors(corsOption));
 app.use(express.json());

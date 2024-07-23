@@ -7,7 +7,7 @@ router.route("/register").post(Register);
 router.route("/login").post(Login);
 router.route("/logOut").get(LogOut);
 router.route("/bookmark/:id").put(isAuthenticated,bookmark);
-router.route("/profile/:id").get(getProfile);
+router.route("/profile/:id").get(isAuthenticated,getProfile);
 router.route("/otherUsers/:id").get(isAuthenticated,otherUsers);
 router.route("/follow/:id").put(isAuthenticated,followUnfollow);
 router.route("/bookmarkedTweets/:id").get(isAuthenticated,bookmarkedTweets);
