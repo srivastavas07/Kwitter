@@ -15,14 +15,19 @@ databaseConnection();
 const app = express();
 
 //adding middleware to the app
-app.use(express.urlencoded({extended:true}));
-export const original = "https://kwitter07.vercel.app"
 
-//cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
+app.use(express.urlencoded({extended:true}));
+export const original = "https://localhost:3000"
+
+// "https://kwitter07.vercel.app" 
+// cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
+
 const corsOption = {
-    origin: "https://kwitter07.vercel.app",  // Allow all paths and subdomains
+
+    origin:"http://localhost:3000",  // Allow all paths and subdomains
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
+    
 }
 app.use(cors(corsOption));
 app.use(express.json());
