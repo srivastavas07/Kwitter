@@ -24,17 +24,17 @@ export const original = "https://localhost:3000"
 
 const corsOption = {
 
-    origin:"http://localhost:3000",  // Allow all paths and subdomains
+    origin:"*",  // Allow all paths and subdomains
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
-    
+
 }
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/tweet",tweetRoutes);
-app.get("/",(res,req)=>{
+app.get("/",(req,res)=>{
     req.send("Server is running");
 });
 
