@@ -35,8 +35,8 @@ app.use(cookieParser());
 app.use("/api/v1/user",userRoutes);
 app.use("/api/v1/tweet",tweetRoutes);
 
-app.get("/",(res,req)=>{
-    req.send("Server is running");
+app.get("/",(req,res)=>{
+    res.send("Server is running");
 });
 
 const Port = process.env.PORT;
