@@ -3,7 +3,8 @@ import { Tweet } from "../models/tweetSchema.js";
 import { User } from "../models/userSchema.js";
 import jwt from 'jsonwebtoken';
 import mongoose from "mongoose";
-import { original } from "../index.js";
+import { original } from "../utils/constants.js";
+
 export const createTweet = async (req, res) => {
     try {
         const { description, id } = req.body;

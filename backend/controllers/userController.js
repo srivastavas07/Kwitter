@@ -1,8 +1,8 @@
 import { User } from "../models/userSchema.js";
 import bcryptjs from "bcryptjs";
-import { original } from "../index.js";
 import { Notification } from "../models/notificationSchema.js";
 import jwt from "jsonwebtoken";
+import { original } from "../utils/constants.js";
 export const Register = async (req, res) => {
     try {
         const { name, username, email, password } = req.body;

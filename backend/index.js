@@ -17,14 +17,13 @@ const app = express();
 //adding middleware to the app
 
 app.use(express.urlencoded({extended:true}));
-// export const original = "https://kwitter07.vercel.app"
 
 // "https://kwitter07.vercel.app" 
 // cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 
 const corsOption = {
 
-    origin:"https://kwitter07.vercel.app",  // Allow all paths and subdomains
+    origin: ["https://kwitter07.vercel.app"],  // Allow all paths and subdomains
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 
