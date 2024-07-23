@@ -1,6 +1,7 @@
 {
   "name": "twitter-clone",
   "version": "0.1.0",
+  "proxy": "https://kwitter-backend.vercel.app",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
