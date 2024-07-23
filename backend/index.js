@@ -22,15 +22,15 @@ export const original = "https://localhost:3000"
 // "https://kwitter07.vercel.app" 
 // cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
 
-const corsOptions = {
-    origin: 'http://localhost:3000', // Set to your frontend origin
-    credentials: true, // Allow cookies for authenticated requests (if applicable)
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], // Allowed headers
-    maxAge: 3600 // Cache preflight response for an hour (optional)
-  };
-  
-app.use(cors(corsOptions));
+const corsOption = {
+
+    origin:"http://localhost:3000",  // Allow all paths and subdomains
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+
+}
+app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/v1/user",userRoutes);
