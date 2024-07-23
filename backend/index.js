@@ -17,7 +17,7 @@ const app = express();
 //adding middleware to the app
 
 app.use(express.urlencoded({extended:true}));
-export const original = "https://kwitter07.vercel.app"
+export const original = "https://localhost:3000"
 
 // "https://kwitter07.vercel.app" 
 // cors basically tells the backend the origin from where the request is coming. to avoid any unauthorised access.
