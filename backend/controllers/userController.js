@@ -90,7 +90,7 @@ export const Login = async (req, res) => {
             user
         })
     } catch (error) {
-        console.log(error);
+        console.log("HEY THERE KAISE HO");
     }
 }
 export const LogOut = (req, res) => {
