@@ -24,7 +24,7 @@ export const original = "https://localhost:3000"
 
 const corsOption = {
 
-    origin:"*",  // Allow all paths and subdomains
+    origin:"http://localhost:3000, https://kwitter-backend.vercel.app",  // Allow all paths and subdomains
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 
