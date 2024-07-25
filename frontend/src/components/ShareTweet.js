@@ -7,7 +7,7 @@ import { LinkedinIcon } from 'react-share';
 import { toast } from 'react-hot-toast';
 
 const ShareTweet = ({ userDetails, setShowShare, tweet }) => {
-    const baseUrl = "http://kwitter07.vercel.app/"
+    const baseUrl = "https://kwitter07.vercel.app/"
     const textToCopy = baseUrl + "comments/" + tweet?._id;
     const copyToClipboard = async () => {
         try {
