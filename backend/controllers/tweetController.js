@@ -3,7 +3,6 @@ import { Tweet } from "../models/tweetSchema.js";
 import { User } from "../models/userSchema.js";
 import jwt from 'jsonwebtoken';
 import mongoose from "mongoose";
-import { original } from "../utils/constants.js";
 
 export const createTweet = async (req, res) => {
     try {
@@ -80,7 +79,7 @@ export const TweetReply = async (req, res) => {
                 actorName: actor.name,
                 actorProfilePhoto: actor.profilePhoto,
                 description: actor.name + " commented on your tweet. ",
-                targetTweetLink: `${original}/comments/${tweetId}`,
+                targetTweetLink: `/comments/${tweetId}`,
                 userId: parentTweet.userId,
             })
         }
@@ -146,7 +145,7 @@ export const likeOrDislike = async (req, res) => {
                     actorName: actor.name,
                     actorProfilePhoto: actor.profilePhoto,
                     description: actor.name + " liked your Tweet. ",
-                    targetTweetLink: `${original}/comments/${tweetId}`,
+                    targetTweetLink: `/comments/${tweetId}`,
                     userId: tweet?.userId,
                 })
             }

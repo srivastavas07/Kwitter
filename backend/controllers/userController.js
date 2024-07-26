@@ -2,7 +2,6 @@ import { User } from "../models/userSchema.js";
 import bcryptjs from "bcryptjs";
 import { Notification } from "../models/notificationSchema.js";
 import jwt from "jsonwebtoken";
-import { original } from "../utils/constants.js";
 export const Register = async (req, res) => {
     try {
         const { name, username, email, password } = req.body;
@@ -203,7 +202,7 @@ export const followUnfollow = async (req, res) => {
                     actorName: actor.name,
                     actorProfilePhoto: actor.profilePhoto,
                     description: actor.name + " followed you. ",
-                    targetTweetLink: `${original}/profile/${target}`,
+                    targetTweetLink: `/profile/${target}`,
                     userId: target,
                 })
             await User.findByIdAndUpdate(target, { $push: { followers: currentUser } });

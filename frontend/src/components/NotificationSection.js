@@ -10,6 +10,7 @@ import moment from 'moment';
 import { FaBell } from 'react-icons/fa';
 
 const NotificationSection = () => {
+    const origin = window.location.origin;
     const { user, notifications } = useSelector((store) => store.user);
     const dispatch = useDispatch();
     const get_Notifications = async () => {
@@ -45,8 +46,9 @@ const NotificationSection = () => {
                         <p className='text-gray-600 my-[10%] text-center'>No Notifications</p>
                 ) : 
                     notifications?.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((notification) => {
+                        const targetLink = `${origin}${notification.targetTweetLink}`
                         return (
-                            <Link to={notification.targetTweetLink}>
+                            <Link to={targetLink}>
                                 <div key={notification?._id} className='p-4 mb-4 bg-gray-900 rounded-lg shadow-md flex items-center'>
                                     <img src={notification.actorProfilePhoto} className='mr-4' style={{
                                         height: "40px",

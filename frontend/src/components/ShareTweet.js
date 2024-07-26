@@ -5,9 +5,10 @@ import { RxCross2 } from 'react-icons/rx';
 import { TwitterShareButton, TwitterIcon, WhatsappShareButton, WhatsappIcon, FacebookShareButton, FacebookIcon, LinkedinShareButton } from "react-share"
 import { LinkedinIcon } from 'react-share';
 import { toast } from 'react-hot-toast';
+import { baseURL } from '../utils/constants';
 
 const ShareTweet = ({ userDetails, setShowShare, tweet }) => {
-    const baseUrl = "https://kwitter07.vercel.app/"
+    const baseUrl = baseURL;
     const textToCopy = baseUrl + "comments/" + tweet?._id;
     const copyToClipboard = async () => {
         try {

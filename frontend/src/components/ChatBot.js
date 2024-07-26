@@ -127,7 +127,7 @@ const ChatBot = () => {
                     )}
                     <div ref={messagesEndRef} />
                 </div>
-                <div className='sm:p-3 p-1 border-t absolute sm:bottom-0 bottom-[70px] w-full backdrop-blur-md bg-[#0000007f] border-gray-500 flex'>
+                <div className='sm:p-3 p-1 border-t absolute sm:bottom-0 bottom-[52px] w-full backdrop-blur-md bg-[#0000007f] border-gray-500 flex'>
                     <textarea
                         ref={textAreaRef}
                         type='text'

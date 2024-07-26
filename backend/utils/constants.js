@@ -1,1 +1,1 @@
-export const original = "https://kwitter07.vercel.app"
+// All constants for backend
