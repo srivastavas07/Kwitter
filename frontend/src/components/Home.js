@@ -17,7 +17,7 @@ const Home = () => {
     if(!user){
       navigate("/login");
     }
-  },[])
+  },[user,navigate])
   return (
     <div className='relative'>
     {edit?<EditProfile/>:("")}

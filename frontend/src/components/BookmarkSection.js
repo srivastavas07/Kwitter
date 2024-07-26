@@ -12,20 +12,20 @@ function BookmarkSection() {
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.user);
     const { refresh, bookmarkedTweets } = useSelector(store => store.tweets);
-    const fetchBookmarkedTweets = async () => {
-        try {
-            const response = await axios.get(`${USER_END_POINT}/bookmarkedTweets/${user?._id}`, {
-                withCredentials: true,
-            });
-            dispatch(getBookmarkedTweets(response?.data?.tweets));
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
+    
     useEffect(() => {
+        const fetchBookmarkedTweets = async () => {
+            try {
+                const response = await axios.get(`${USER_END_POINT}/bookmarkedTweets/${user?._id}`, {
+                    withCredentials: true,
+                });
+                dispatch(getBookmarkedTweets(response?.data?.tweets));
+            } catch (error) {
+                console.log(error);
+            }
+        };
         fetchBookmarkedTweets();
-    }, [refresh]);
+    }, [refresh,user?._id,dispatch]);
 
 
     return (

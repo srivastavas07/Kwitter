@@ -1,5 +1,4 @@
 import React from 'react';
-import { FcGoogle } from "react-icons/fc";
 import { FaHeart } from 'react-icons/fa';
 import { FaTrademark } from 'react-icons/fa';
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa6";

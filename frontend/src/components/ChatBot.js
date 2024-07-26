@@ -31,7 +31,7 @@ const ChatBot = () => {
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
         setContext(botChat.slice(contextLength));
-    }, [botChat])
+    }, [botChat,contextLength])
 
     const handleEnter = (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
@@ -61,7 +61,6 @@ const ChatBot = () => {
             console.log(err);
         }
     }
-    const { user } = useSelector((store) => store.user);
     return (
         <div className='sm:w-[50%] w-[100%] relative h-[100vh] border-right'>
             <div className='p-4 border-bottom absolute top-0 w-full backdrop-blur-md'>
@@ -128,7 +127,7 @@ const ChatBot = () => {
                     )}
                     <div ref={messagesEndRef} />
                 </div>
-                <div className='sm:p-3 p-1 border-t absolute sm:bottom-0 bottom-[52px] w-full backdrop-blur-md bg-[#0000007f] border-gray-500 flex'>
+                <div className='sm:p-3 p-1 border-t absolute sm:bottom-0 bottom-[70px] w-full backdrop-blur-md bg-[#0000007f] border-gray-500 flex'>
                     <textarea
                         ref={textAreaRef}
                         type='text'

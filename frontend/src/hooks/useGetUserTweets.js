@@ -22,6 +22,6 @@ const useGetUserTweets = async(id) => {
         }
     }
         fetchUserTweets();
-    },[refresh,id]);
+    },[refresh,id,dispatch]);
 }
 export default useGetUserTweets;

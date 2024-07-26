@@ -8,18 +8,18 @@ const useGetNotifications = () => {
     const {user} = useSelector((store) => store.user);
     const {refresh} = useSelector((store) => store.tweets);
     const dispatch = useDispatch();
-    const get_Notifications = async () => {
-        try {
-            const response = await axios.get(`${USER_END_POINT}/notifications/${user?._id}`, {
-                withCredentials: true,
-            })
-            dispatch(getNotifications(response.data.notifications))
-        } catch (error) {
-            console.log(error);
-        }
-    }
     useEffect(() => {
+        const get_Notifications = async () => {
+            try {
+                const response = await axios.get(`${USER_END_POINT}/notifications/${user?._id}`, {
+                    withCredentials: true,
+                })
+                dispatch(getNotifications(response.data.notifications))
+            } catch (error) {
+                console.log(error);
+            }
+        }
         get_Notifications();
-    }, [refresh]);
+    }, [refresh,user?._id,dispatch]);
 };
 export default useGetNotifications;

@@ -47,9 +47,6 @@ const Tweet = ({ tweet }) => {
                 withCredentials: true,
             })
             setAllLikedUsers(response.data);
-            {/*1.setAllLikedUsers(response.data);: This updates the state variable allLikedUsers with the data received from the API response (response.data). Each time this function runs, it sets allLikedUsers to the new fetched data.
-               2.useEffect Dependency Array ([showLikedUser]): This hook runs the likedUserShow function whenever showLikedUser state changes. It ensures that whenever the user clicks to show liked users (showLikedUser becomes true), the function fetches the data and updates the state accordingly.
-               3.Second useEffect Hook: This hook is used to log allLikedUsers to the console. It runs every time allLikedUsers changes, which means it logs the updated state variable each time setAllLikedUsers is called with new data.*/}
         }
         catch (error) {
             console.log(error);
@@ -197,3 +194,6 @@ const Tweet = ({ tweet }) => {
 
 
 export default Tweet;
+//    1.setAllLikedUsers(response.data);: This updates the state variable allLikedUsers with the data received from the API response (response.data). Each time this function runs, it sets allLikedUsers to the new fetched data.
+//    2.useEffect Dependency Array ([showLikedUser]): This hook runs the likedUserShow function whenever showLikedUser state changes. It ensures that whenever the user clicks to show liked users (showLikedUser becomes true), the function fetches the data and updates the state accordingly.
+//    3.Second useEffect Hook: This hook is used to log allLikedUsers to the console. It runs every time allLikedUsers changes, which means it logs the updated state variable each time setAllLikedUsers is called with new data.

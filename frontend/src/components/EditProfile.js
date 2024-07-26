@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { RxCross2 } from "react-icons/rx";
 import { setProperty } from '../redux/propertySlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -73,7 +73,7 @@ const EditProfile = () => {
                     <div className="absolute bottom-0 left-4 transfrom translate-y-1/2">
                         <img
                             src={profilePic}
-                            alt="Profile Photo"
+                            alt="Profile-pic"
                             className=" sm:w-36 sm:h-36 h-32 w-32 rounded-full border-4 border-black"
                         />
                     </div>

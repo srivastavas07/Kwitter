@@ -15,4 +15,5 @@ router.route("/likedUsers/:id").get(isAuthenticated, getLikedUsers);
 router.route("/comments/:id").get(isAuthenticated,getTweetComments);
 router.route("/reply").post(isAuthenticated,TweetReply);
 router.route("/chat-bot").get(isAuthenticated,ChatBot);
+
 export default router;

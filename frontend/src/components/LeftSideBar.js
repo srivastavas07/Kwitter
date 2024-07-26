@@ -1,5 +1,5 @@
 import { SideBarContent } from '../Assets/constants/constant';
-import React, { useEffect } from 'react';
+import React from 'react';
 import twitterLogo from '../Assets/twitterLogo.png'
 import { Link } from 'react-router-dom';
 import { SlOptionsVertical } from "react-icons/sl";

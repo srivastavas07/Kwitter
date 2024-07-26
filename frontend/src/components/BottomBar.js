@@ -1,5 +1,5 @@
 import { SideBarContent } from '../Assets/constants/constantmobile.js';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { SlOptionsVertical } from "react-icons/sl";
 import { useState } from 'react';

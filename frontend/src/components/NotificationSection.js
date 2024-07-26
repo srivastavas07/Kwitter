@@ -51,7 +51,7 @@ const NotificationSection = () => {
                                     <img src={notification.actorProfilePhoto} className='mr-4' style={{
                                         height: "40px",
                                         borderRadius: "50%"
-                                    }} />
+                                    }} alt="user-profile" />
                                     <div>
                                         <p className='text-gray-300'>{notification.description}</p>
                                         <p className='text-gray-500 text-xs'>{moment(notification.createdAt).fromNow()}</p>

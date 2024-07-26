@@ -34,7 +34,7 @@ const Profile = () => {
     useGetUserTweets(id);
 
     useEffect(() => {
-        if (profile?._id == user?._id) {
+        if (profile?._id === user?._id) {
             setEdit(true);
         } else {
             setEdit(false);
@@ -103,7 +103,7 @@ const Profile = () => {
     });
 
     return (
-        <div className="bg-transparent rounded-none sm:w-[50%] w-[100%] py-4 shadow-md overflow-y-auto sm:max-h-[100vh] max-h-[95.5vh] scroll border-right">
+        <div className="bg-transparent rounded-none sm:w-[50%] w-[100%] py-4 shadow-md overflow-y-auto sm:max-h-[100vh] max-h-[90vh] scroll border-right">
             <div className="flex items-center mb-3 px-4">
                 <Link to="/">
                     <button className="bg-transparent border-none focus:outline-none">
@@ -126,7 +126,7 @@ const Profile = () => {
                     <div className="absolute bottom-0 left-4 transfrom translate-y-1/2">
                         <img
                             src={profile?.profilePhoto === "" || profile?.profilePhoto === null ? (logo) : (profile?.profilePhoto)}
-                            alt="Profile Photo"
+                            alt="Profile-pic"
                             className=" w-36 h-36 rounded-full border-4 border-black"
                         />
                     </div>
