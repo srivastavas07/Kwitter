@@ -12,7 +12,7 @@ const LikedByUsers = ({ allLikedUsers, setShowLikedUser }) => {
                     <RxCross2 size={15} />
                 </button>
                 <p className='text-xs font-semibold text-slate-400 mb-1'>Liked by</p>
-                <div className="p-1 max-h-[35vh] overflow-y-auto">
+                <div className="p-1 max-h-[35vh] overflow-y-auto scroll">
                     {allLikedUsers.map((user, index) => {
                         const capiName = user?.name ? user?.name.charAt(0).toUpperCase() + user?.name.slice(1) : 'User not Found';
                         const username = user?.username ? user?.username : "Deleted User";

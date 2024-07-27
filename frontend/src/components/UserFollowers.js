@@ -13,7 +13,7 @@ const UserFollowers = ({ followers, setShowFollowers }) => {
                 </button>
                 <p className='text-xs font-semibold text-slate-400 mb-1'>Followers..</p>
                 {followers.length === 0 ? (<div className='text-sm text-slate-400 py-4 text-center'>No followers or User Deleted</div>) : null}
-                <div className="p-1 max-h-[50vh] overflow-y-auto">
+                <div className="p-1 max-h-[50vh] overflow-y-auto scroll">
                     {followers.map((user, index) => {
                         const capiName = user?.name ? user?.name.charAt(0).toUpperCase() + user?.name.slice(1) : 'User not Found';
                         const username = user?.username ? user?.username : "Deleted User";
