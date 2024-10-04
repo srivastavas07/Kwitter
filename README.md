@@ -63,17 +63,19 @@ Kwitter is a fully functional Twitter clone, allowing users to post tweets, foll
 
 #### Frontend `.env`:
 ```env
-REACT_APP_CLIENT_ID=your_google_oauth_client_id
-REACT_APP_SENTIMENT_ANALYSIS_API_KEY=your_sentiment_analysis_api_key
+REACT_APP_SERVICE_ID= email_js_key
+REACT_APP_TEMPLATE_ID= email_js_template_id
+REACT_APP_API_KEY= email_js_api_key
+REACT_APP_CLIENT_SECRET= your_google_client_secret
+REACT_APP_CLIENT_ID= your_google_client_id
 ```
 #### Backend `.env`:
 ```env
-PORT=8000
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_jwt_secret
-OPENAI_API_KEY=your_openai_api_key
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
+MONGO_URI= your_mongo_uri
+TOKEN_SECRET= your_jwt_token_secret
+GOOGLE_API_KEY= your_gemini_api_key
+baseURL= http://localhost:3000
+
 ```
 ## API Endpoints
 
