@@ -7,9 +7,6 @@
 - [Setup and Installation](#setup-and-installation)
 - [Environment Variables](#environment-variables)
 - [Screenshots](#screenshots)
-- [Future Enhancements](#future-enhancements)
-- [Contributors](#contributors)
-- [License](#license)
 
 ---
 
@@ -87,18 +84,42 @@ GOOGLE_CLIENT_SECRET=your_google_client_secret
 `/api/v1/tweet`
 
 ## Screenshots
+
 ## Screenshots
+### Login
 ![Login](./preview/Login.png)  
+
+### Home
 ![Home](./preview/Home.png)  
+
+### Notification
 ![Notification](./preview/Notification.png)  
-![Bookmark](./preview//Bookmark.png)  
+
+### Bookmark
+![Bookmark](./preview/Bookmark.png)  
+
+### Share
 ![Share](./preview/Share.png)  
+
+### Chatbot
 ![Chatbot](./preview/chatBot.png)  
+
+### Comment
 ![Comment](./preview/Comment.png)  
+
+### Edit
 ![Edit](./preview/Edit.png)  
+
+### Followers
 ![Followers](./preview/FollowUnfollowLsit.png)  
-![Liked by](./preview//Liked%20by.png)  
+
+### Liked by
+![Liked by](./preview/Liked%20by.png)  
+
+### Search User and Analyze Sentiment
 ![Search User and Analyze Sentiment](./preview/tweetAnalyse_search_user_etc.png)  
+
+### Profile
 ![Profile](./preview/profile.png)
 
 
