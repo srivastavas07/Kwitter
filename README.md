@@ -82,12 +82,11 @@ baseURL= http://localhost:3000
 ### User Routes Endpoint
  `/api/v1/user`
 
-### Tweet Routes
+### Tweet Routes Endpoint
 `/api/v1/tweet`
 
 ## Screenshots
 
-## Screenshots
 ### Login
 ![Login](./preview/Login.png)  
 
