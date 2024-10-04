@@ -64,7 +64,12 @@ const LeftSideBar = () => {
             </div>
             <div className={`py-4 px-8 rounded-full absolute bottom-10 hover:${hoverColor}`}>
                 <div className='logout flex items-center relative'>
-                    <img src={user?.profilePhoto === "" || user?.profilePhoto === null ? (logo) : (user?.profilePhoto)} className='h-11 w-11 rounded-full mr-2' alt="logout" />
+                    <img src={user?.profilePhoto === "" || user?.profilePhoto === null ? (logo) : (user?.profilePhoto)} className='h-11 w-11 rounded-full mr-2' alt="logout"
+                        onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = logo;
+                        }}
+                    />
                     <div className='username'>
                         <span className='ml-2 block font-semibold'>{capiName}</span>
                         <span className="ml-2 text-[#ffffff85]">@{user?.username}</span>

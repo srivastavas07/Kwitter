@@ -126,11 +126,11 @@ const Tweet = ({ tweet }) => {
 
     if (currentTime.getDate() === timee.getDate()) {
         const amPm = timee.getHours() >= 12 ? 'pm' : 'am';
-        const hour = (timee.getHours() % 12 || 12).toString().padStart(2, '0'); 
+        const hour = (timee.getHours() % 12 || 12).toString().padStart(2, '0');
         const minutes = timee.getMinutes().toString().padStart(2, '0'); // Ensure two digits
-        
-            Dtime = `${hour}:${minutes} ${amPm}`;
-        
+
+        Dtime = `${hour}:${minutes} ${amPm}`;
+
     } else {
         Dtime = `${dayOfMonth} ${month}`;
     }
@@ -144,6 +144,12 @@ const Tweet = ({ tweet }) => {
                     src={userDetails?.profilePhoto === null || userDetails?.profilePhoto === "" ? (logo) : (userDetails?.profilePhoto)}
                     alt="User Avatar"
                     className="w-10 h-10 rounded-full mr-3"
+
+                    onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = logo;
+                    }}
+                    
                 />
                 <div className="sm:flex items-center gap-2 ">
                     <h2 className="font-semibold">{capiName || 'Loading...'}</h2>

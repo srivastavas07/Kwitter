@@ -43,7 +43,7 @@ function BookmarkSection() {
                     </div>
                 </div>
                 {/* Tweet components */}
-                <div className=' overflow-y-auto sm:max-h-[90vh] max-h-[83vh] pb-4'>
+                <div className=' overflow-y-auto sm:max-h-[90vh] max-h-[83vh] pb-4 scroll'>
                     {
                         bookmarkedTweets?.slice().filter(tweet => tweet && tweet.createdAt).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((tweet, index) => {
                             return (

@@ -8,6 +8,7 @@ import { getNotifications } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { FaBell } from 'react-icons/fa';
+import logo from "../Assets/constants/unnamed.png"
 
 const NotificationSection = () => {
     const origin = window.location.origin;
@@ -37,23 +38,28 @@ const NotificationSection = () => {
                     <div className='ml-2'>
                         <h1 className='text-2xl font-bold'>Notifications</h1><p className=' text-gray-500 text-sm'>@{user?.name}</p>
                     </div>
-                    <button title="Get Notifications" onClick={get_Notifications} className=' bg-blue-600 text-white p-3 text-sm flex items-center'>Get <FaBell className="ml-1" size={16}/></button>
+                    <button title="Get Notifications" onClick={get_Notifications} className=' bg-blue-600 text-white p-3 text-sm flex items-center'>Get <FaBell className="ml-1" size={16} /></button>
                 </div>
             </div>
-            <div className='p-4 overflow-y-auto sm:max-h-[90vh] max-h-[95.5vh]'>
-                {   notifications?.length === 0 ? (
+            <div className='p-4 overflow-y-auto sm:max-h-[90vh] max-h-[95.5vh] scroll'>
+                {notifications?.length === 0 ? (
 
-                        <p className='text-gray-600 my-[10%] text-center'>No Notifications</p>
-                ) : 
+                    <p className='text-gray-600 my-[10%] text-center'>No Notifications</p>
+                ) :
                     notifications?.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((notification) => {
                         const targetLink = `${origin}${notification.targetTweetLink}`
                         return (
                             <Link to={targetLink}>
                                 <div key={notification?._id} className='p-4 mb-4 bg-gray-900 rounded-lg shadow-md flex items-center'>
-                                    <img src={notification.actorProfilePhoto} className='mr-4' style={{
+                                    <img src={notification?.actorProfilePhoto || logo} className='mr-4' style={{
                                         height: "40px",
                                         borderRadius: "50%"
-                                    }} alt="user-profile" />
+                                    }} alt="user-profile"
+                                        onError={(e) => {
+                                            e.currentTarget.onerror = null;
+                                            e.currentTarget.src = logo;
+                                        }}
+                                    />
                                     <div>
                                         <p className='text-gray-300'>{notification.description}</p>
                                         <p className='text-gray-500 text-xs'>{moment(notification.createdAt).fromNow()}</p>

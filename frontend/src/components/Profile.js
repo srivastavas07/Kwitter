@@ -125,9 +125,13 @@ const Profile = () => {
                 >
                     <div className="absolute bottom-0 left-4 transfrom translate-y-1/2">
                         <img
-                            src={profile?.profilePhoto === "" || profile?.profilePhoto === null ? (logo) : (profile?.profilePhoto)}
+                            src={profile?.profilePhoto || logo}
                             alt="Profile-pic"
                             className=" w-36 h-36 rounded-full border-4 border-black"
+                            onError={(e) => {
+                                e.currentTarget.onerror = null; 
+                                e.currentTarget.src = logo; 
+                              }}
                         />
                     </div>
                     <div>

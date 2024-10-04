@@ -12,7 +12,7 @@ import { RxCross2 } from 'react-icons/rx';
 
 function RightSideBar() {
   const { user, otherUsers } = useSelector(store => store.user);
-  const {searchArea} = useSelector(store=>store.properties)
+  const { searchArea } = useSelector(store => store.properties)
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   useGetOtherUsers(user?._id);
@@ -52,7 +52,7 @@ function RightSideBar() {
           value={searchValue}
           className="w-full py-2 px-4 bg-transparent outline-none"
         />
-        { searchValue.length > 0 ? <RxCross2 className='absolute right-3 cursor-pointer bg-gray-900' size = {16} onClick={()=>setSearchValue("")} /> : null}
+        {searchValue.length > 0 ? <RxCross2 className='absolute right-3 cursor-pointer bg-gray-900' size={16} onClick={() => setSearchValue("")} /> : null}
       </div>
 
       {/* Who to Follow */}
@@ -82,7 +82,12 @@ function FollowCard({ otherUser }) {
 
       <div className='flex items-center space-x-4 px-4 py-3'>
         <Link to={`profile/${otherUser._id}`}>
-          <img src={otherUser?.profilePhoto === "" || otherUser?.profilePhoto === null ? (logo) : (otherUser?.profilePhoto)} alt="User" className="w-10 h-10 rounded-full" />
+          <img src={otherUser?.profilePhoto === "" || otherUser?.profilePhoto === null ? (logo) : (otherUser?.profilePhoto)} alt="User"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = logo;
+            }}
+            className="w-10 h-10 rounded-full" />
         </Link>
         <div className="flex-1">
           <Link to={`profile/${otherUser._id}`}>
@@ -105,14 +110,14 @@ const SearchResult = ({ searchResult }) => {
   return (
     <div className='searchResult absolute h-full overflow-y-auto scroll w-full bg-black rounded-md right-0 top-0'>
       {searchResult.map((user, index) => {
-                        const capiName = user?.name ? user?.name.charAt(0).toUpperCase() + user?.name.slice(1) : 'User not Found';
-                        const username = user?.username ? user?.username : "Deleted User";
-                        return (
-                            <div key={index} className='flex items-center space-x-4 py-3 px-2 hover:bg-[#52525249]'>
-                                <Link to={`/profile/${user?._id}`}>
-                                    <img src={user?.profilePhoto === "" || user?.profilePhoto === null || user === null ? (logo) : (user?.profilePhoto)} alt="User" className="w-10 h-10 rounded-full" />
-                                </Link>
-                                {/*
+        const capiName = user?.name ? user?.name.charAt(0).toUpperCase() + user?.name.slice(1) : 'User not Found';
+        const username = user?.username ? user?.username : "Deleted User";
+        return (
+          <div key={index} className='flex items-center space-x-4 py-3 px-2 hover:bg-[#52525249]'>
+            <Link to={`/profile/${user?._id}`}>
+              <img src={user?.profilePhoto === "" || user?.profilePhoto === null || user === null ? (logo) : (user?.profilePhoto)} alt="User" className="w-10 h-10 rounded-full" />
+            </Link>
+            {/*
                                 The issue you're encountering is due to how relative paths are resolved when using <Link> 
                                 in React Router. When you use <Link to={profile/${user?._id}}>, React Router treats it as a 
                                 relative path to the current URL. To ensure that the link resolves correctly to an absolute path 
@@ -122,16 +127,16 @@ const SearchResult = ({ searchResult }) => {
                                  rather than treating it as a relative path from the current URL 
                                  (http://localhost:3000/profile/663df2dd419dc9ff9b30ebf3). */}
 
-                                <div className="flex-1">
-                                    <Link to={`/profile/${user?._id}`}>
-                                        <h3 className="font-semibold hover:underline">{capiName}</h3>
-                                    </Link>
-                                    <p className="text-gray-500 text-sm mt-[2px]">@{username}</p>
-                                    <p className='text-gray-500 text-sm mt-[2px]'>{user.email}</p>
-                                </div>
-                            </div>
-                        );
-                    })}
+            <div className="flex-1">
+              <Link to={`/profile/${user?._id}`}>
+                <h3 className="font-semibold hover:underline">{capiName}</h3>
+              </Link>
+              <p className="text-gray-500 text-sm mt-[2px]">@{username}</p>
+              <p className='text-gray-500 text-sm mt-[2px]'>{user.email}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   )
 }

@@ -1,0 +1,104 @@
+# Kwitter Application
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Setup and Installation](#setup-and-installation)
+- [Environment Variables](#environment-variables)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
+- [Contributors](#contributors)
+- [License](#license)
+
+---
+
+## Introduction
+Kwitter is a fully functional Twitter clone, allowing users to post tweets, follow other users, and engage with content through likes and comments. In addition to the usual Twitter features, Kwitter provides:
+- A **Chatbot** with context tracking, making conversations more intuitive and fluid.
+- **Tweet Sentiment Analysis**, providing insights into whether a tweet conveys positive, negative, or neutral sentiments.
+
+## Features
+- **User Authentication**: Secure login/signup using JWT ,follow, unfollow etc.
+- **Tweet Functionality**: Create, like, retweet, and reply to tweets, share, bookmark tweets and many more.
+- **Follow/Unfollow Users**: Engage with other users by following or unfollowing them.
+- **Chatbot with Context Tracking**: A chatbot that provides contextual replies and helps with navigation within the app.
+- **Sentiment Analysis**: Analyze the sentiment of a tweet and display whether it’s positive, negative, or neutral.
+- **Real-time Notifications**: Get notifications when someone interacts with your tweet.
+
+## Tech Stack
+### Frontend:
+- **ReactJS**: UI Library
+- **Redux**: State management
+- **TailwindCSS**: For responsive and modern UI styling
+- **AI_with_context**: Gemini Chat bot has the context of previous chats.
+
+### Backend:
+- **Node.js**: Server-side environment
+- **Express.js**: Backend framework
+- **MongoDB**: NoSQL database for storing user and tweet data
+- **Gemini API**: For chatbot functionality
+- **Sentiment Analysis API**: Analyzes the sentiment of tweets
+
+## Setup and Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/kwitter.git
+    cd kwitter
+    ```
+
+2. Install dependencies:
+    ### For the backend:
+    ```bash
+    cd backend
+    npm install
+    ```
+
+    ### For the frontend:
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+3. Create a `.env` file in both the frontend and backend directories and add the following environment variables.
+
+### Environment Variables
+
+#### Frontend `.env`:
+```env
+REACT_APP_CLIENT_ID=your_google_oauth_client_id
+REACT_APP_SENTIMENT_ANALYSIS_API_KEY=your_sentiment_analysis_api_key
+```
+#### Backend `.env`:
+```env
+PORT=8000
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+OPENAI_API_KEY=your_openai_api_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+## API Endpoints
+
+### User Routes Endpoint
+ `/api/v1/user`
+
+### Tweet Routes
+`/api/v1/tweet`
+
+## Screenshots
+## Screenshots
+![Login](./preview/Login.png)  
+![Home](./preview/Home.png)  
+![Notification](./preview/Notification.png)  
+![Bookmark](./preview//Bookmark.png)  
+![Share](./preview/Share.png)  
+![Chatbot](./preview/chatBot.png)  
+![Comment](./preview/Comment.png)  
+![Edit](./preview/Edit.png)  
+![Followers](./preview/FollowUnfollowLsit.png)  
+![Liked by](./preview//Liked%20by.png)  
+![Search User and Analyze Sentiment](./preview/tweetAnalyse_search_user_etc.png)  
+![Profile](./preview/profile.png)
+
+

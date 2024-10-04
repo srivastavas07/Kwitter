@@ -71,7 +71,7 @@ const CommentsSection = () => {
                     <h1 className='text-2xl font-bold'>Comment <span className='text-sm'>'s</span></h1>
                 </div>
             </div>
-            <div className='CommentContent sm:h-[100%] h-[86%] w-full overflow-y-auto'>
+            <div className='CommentContent sm:h-[100%] h-[86%] w-full overflow-y-auto scroll'>
                 {tweet ? (
                     <div>
                         <div>

@@ -4,7 +4,6 @@ dotenv.config({
     path: './.env'
 });
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-console.log(process.env.GOOGLE_API_KEY);
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -14,7 +13,7 @@ export const analyseSentiment = async (req, res) => {
         console.log(tweet);
         const prompt = `"${tweet}" -> what is the sentiment of this text. reply under one word positive negative neutral and also with emoji.`;
         const result = await model.generateContent(prompt);
-        const response = await result.response;
+        const response = result.response;
         const text = response.text();
         console.log(text);
         return res.status(201).json({
