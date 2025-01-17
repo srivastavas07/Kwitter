@@ -53,8 +53,9 @@ const NotificationSection = () => {
                                 <div key={notification?._id} className='p-4 mb-4 bg-gray-900 rounded-lg shadow-md flex items-center'>
                                     <img src={notification?.actorProfilePhoto || logo} className='mr-4' style={{
                                         height: "40px",
+                                        width:"40px",
                                         borderRadius: "50%"
-                                    }} alt="user-profile"
+                                    }} alt="userPic"
                                         onError={(e) => {
                                             e.currentTarget.onerror = null;
                                             e.currentTarget.src = logo;
